@@ -5,9 +5,9 @@ const logger = require('./logger')
 const authorize = require('./authorize')
 //  req => middleware => res
 
-// app.use([logger, authorize])
-// app.use(express.static('./public'))
-app.use(morgan('tiny'))
+// app.use([logger, authorize])       //  OWN MIDDLEWARE
+// app.use(express.static('./public'))    // EXPRESS MIDDLEWARE
+app.use(morgan('tiny'))               // THIRD PARTY MIDDLEWARE
 
 app.get('/', (req, res) => {
   res.send('Home')
